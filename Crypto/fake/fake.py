@@ -1,0 +1,46 @@
+def rsa_decrypt(p, n, e, c):
+    q = n // p
+
+    if n % p != 0:
+        print("Error! p is not n's divider")
+        return None
+    
+    phi = (p - 1) * (q - 1)
+    d = pow(e, -1, phi)
+    check = (e * d) % phi
+    m = pow(c, d, n)
+    return m, d, q, phi
+
+def number_to_text(number):
+    try:
+        byte_length = (number.bit_length() + 7) // 8
+        bytes_data = number.to_bytes(byte_length, 'big')
+
+        text = bytes_data.decode('utf-8')
+        return text, bytes_data
+    except Exception as e:
+        try:
+            byte_length = (number.bit_length() + 7) // 8
+            bytes_data = number.to_bytes(byte_length, 'little')
+            text = bytes_data.decode('utf-8')
+            return text, bytes_data
+        except:
+            return None, bytes_data
+
+p = 8997745156133069064402471587669037410711848583056805007779244889164579663957248758273651985199508743490291820130922204733582148851380905785672189765186563
+n = 71703317789696437628959174324552216364894791311021485660423998375035425966764094438434633874477623185542526756775170721625209395286538533703077962179202575588831103034230593522147766669865665260400476176264863355519210109487858000456206104281451496147893461929705906889040493248385886199448904762329320044049
+e = 65537
+c = 31129751172818032855090004614257415090308744075566170222044873029375479210391902421561853686515672191194848446164826293635454362981463647807092389433048870602479934610805778058940594621433604085528693845113928494923084990620765445415742327057650405246456070255605084852238136967941414344501303995583082997734
+
+
+result = rsa_decrypt(p, n, e, c)
+
+if result:
+    m, d, q, phi = result
+
+    text, bytes_data = number_to_text(m)
+    
+    if text:
+        print(f"Flag: {text}")
+    else:
+        print("Failed to decode as UTF-8 text")
