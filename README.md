@@ -2,6 +2,6 @@
 
 Solutions of CTF tasks
 
-### ⚠️ DISCLAMER ⚠️:
+### ⚠️ DISCLAIMER ⚠️:
 
   For educational purposes only!!! 
