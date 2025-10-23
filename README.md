@@ -1,7 +1,6 @@
 # Tasks
 
-Solutions of CTF tasks\n
-
+Solutions of CTF tasks
 
 ### DISCLAMER:
 
