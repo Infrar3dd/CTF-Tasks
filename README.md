@@ -3,6 +3,6 @@
 Solutions of CTF tasks
 
 
-**DISCLAMER:**
+# DISCLAMER:
 
-  FOR EDUCATIONAL PURPOSES ONLY! 
+  For educational purposes only!!! 
