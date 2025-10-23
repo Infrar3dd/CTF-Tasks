@@ -1,4 +1,4 @@
-# Tasks
+# CTF Tasks
 
 Solutions of CTF tasks
 
