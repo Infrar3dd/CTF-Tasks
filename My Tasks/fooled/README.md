@@ -1,6 +1,5 @@
 # fooled
 
----
 ### Stego
 
 ### Description
